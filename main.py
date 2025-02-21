@@ -1,6 +1,8 @@
-def main():
-    print("Hello from fastapifirst!")
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/strings")
+def get_strings():
+    return ["apple", "banana", "cherry", "date"]
